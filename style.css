@@ -1,0 +1,132 @@
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --light-grey: hsl(217, 12%, 63%);
+  --light-blue: hsl(213, 19%, 30%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --squar: 3.125rem;
+  --pady: 2rem;
+  --gap: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: "overpass", Arial, Helvetica, sans-serif;
+}
+
+main {
+  background-color: #252525;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.card_body {
+  max-width: 25rem;
+  min-height: 23rem;
+  color: white;
+  border-radius: 1.5rem;
+  padding: var(--pady) 1.5rem;
+  box-sizing: border-box;
+  background: linear-gradient(150deg, var(--dark-blue) 60%, var(--very-dark-blue) 180%);
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: var(--light-blue);
+  display: grid;
+  place-items: center;
+}
+
+.icon span {
+  font-size: 2rem;
+  color: var(--orange);
+  transform: translateY(-2px);
+}
+
+.card_body h1 {
+  margin: 1.25rem 0;
+}
+
+.card_body p {
+  color: var(--light-grey);
+}
+
+.numbers {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap);
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.numbers input {
+  display: none;
+}
+
+.number {
+  display: grid;
+  place-items: center;
+  width: var(--squar);
+  height: var(--squar);
+  border-radius: 50%;
+  background-color: var(--very-dark-blue);
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+}
+
+.numbers input:active+label {
+  background-color: var(--orange);
+}
+
+.numbers input:checked+label {
+  background-color: var(--light-grey);
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  padding: 1rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  background-color: var(--orange);
+  color: white;
+  user-select: none;
+  cursor: pointer;
+}
+
+.btn:active {
+  background-color: white;
+  color: var(--orange);
+}
+
+#section2 {
+  display: none;
+  text-align: center;
+  min-height: calc(23rem - (var(--pady) * 2));
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#result {
+  color: var(--orange);
+  padding: 0.75rem 1rem;
+  background-color: var(--light-blue);
+  border-radius: 1.5rem;
+}
+
+@media screen and (max-width: 30em) {
+  :root {
+    --squar: 2.8rem;
+    --pady: 1rem;
+    --gap: .3rem;
+  }
+
+  .card_body {
+    width: 90%;
+  }
+}
